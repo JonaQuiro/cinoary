@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cionary por Equipos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+<section id="pantalla-configuracion">
+    <h1>Cionary – Juego por Equipos</h1>
+
+    <div class="config-bloque">
+        <h3>⏱ Duración del turno</h3>
+        <label><input type="radio" name="tiempo" value="30"> 30 segundos</label><br>
+        <label><input type="radio" name="tiempo" value="60" checked> 60 segundos</label><br>
+        <label><input type="radio" name="tiempo" value="120"> 120 segundos</label>
+    </div>
+
+    <div class="config-bloque">
+        <h3>🔁 Rondas por equipo</h3>
+        <label><input type="radio" name="rondas" value="3"> 3</label><br>
+        <label><input type="radio" name="rondas" value="5" checked> 5</label><br>
+        <label><input type="radio" name="rondas" value="10"> 10</label><br>
+        <label><input type="radio" name="rondas" value="20"> 20</label>
+    </div>
+
+    <div class="botones-config">
+        <button id="btn-reglamento">📘 Reglamento</button>
+        <button id="btn-comenzar">▶️ Comenzar</button>
+    </div>
+</section>
+
+<!-- MODAL REGLAMENTO -->
+<div id="modal-reglamento">
+    <div class="modal-contenido">
+        <h2>📘 Reglamento</h2>
+        <p>
+            🔹 Juego por equipos.<br>
+            🔹 Un jugador describe la palabra sin decir:<br>
+            <strong>la palabra principal ni ninguna palabra prohibida</strong>.
+        </p>
+        <p>
+            🟢 Acierto: +1 punto<br>
+            🔴 Error o tiempo agotado: −1 punto
+        </p>
+        <p>
+            ⚡ En caso de empate → Muerte súbita.<br>
+            ⚡ Gana el equipo que saque ventaja tras ambos turnos.
+        </p>
+        <button id="btn-cerrar-reglamento">Cerrar</button>
+    </div>
+</div>
+
+<section id="pantalla-turno">
+    <header>
+        <h2 id="equipo-actual"></h2>
+        <p id="ronda-actual"></p>
+        <p id="tiempo-restante"></p>
+    </header>
+
+    <div class="carta">
+        <h1 id="palabra-principal"></h1>
+        <ul id="palabras-prohibidas"></ul>
+    </div>
+
+    <div class="acciones">
+        <button id="btn-acierto">✅ ACERTAMOS</button>
+        <button id="btn-error">❌ FALLAMOS</button>
+        <button id="btn-cambiar">🔄 Cambiar palabra</button>
+    </div>
+
+    <footer>
+        <p>Equipo A: <span id="puntos-a">0</span></p>
+        <p>Equipo B: <span id="puntos-b">0</span></p>
+    </footer>
+</section>
+
+<section id="pantalla-final">
+    <h1>🏁 Fin del Juego</h1>
+    <p>Equipo A: <span id="final-a"></span></p>
+    <p>Equipo B: <span id="final-b"></span></p>
+    <h2 id="ganador"></h2>
+    <button id="btn-reiniciar">🔁 Jugar de nuevo</button>
+</section>
+
+<script src="js/cartas.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

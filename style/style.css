@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #1b5e20;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+section {
+    display: none;
+    padding: 20px;
+}
+
+#pantalla-configuracion {
+    display: block;
+}
+
+.config-bloque {
+    margin: 20px 0;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.carta {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+#palabras-prohibidas {
+    list-style: none;
+    padding: 0;
+}
+
+#palabras-prohibidas li {
+    background: #ffcdd2;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* MODAL */
+#modal-reglamento {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+}
+
+.modal-contenido {
+    background: white;
+    color: black;
+    padding: 20px;
+    max-width: 400px;
+    margin: 10% auto;
+    border-radius: 10px;
+}
+
+/* MUERTE SÚBITA */
+body.muerte-subita {
+    background: linear-gradient(135deg, #8e0000, #c62828);
+}
+
+@keyframes pulso {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.muerte-subita .carta {
+    animation: pulso 0.6s infinite;
+}
