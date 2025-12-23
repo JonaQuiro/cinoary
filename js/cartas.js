@@ -1,4 +1,4 @@
-const CARTAS = [
+const cartas = [
     {
         palabra: "BICICLETA",
         prohibidas: ["rueda", "pedal", "andar", "casco"]
@@ -968,8 +968,6 @@ const CARTAS = [
     "palabra": "HORARIO",
     "prohibidas": ["materias", "días", "hora", "choque", "armar"]
 },
-
-// OBJETOS DE PLAYA / VERANO
 {
     "palabra": "FRISBEE",
     "prohibidas": ["disco", "tirar", "perro", "playa", "volar"]
