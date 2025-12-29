@@ -13,9 +13,9 @@
 
     <div class="config-bloque">
         <h3>⏱ Duración del turno</h3>
-        <label><input type="radio" name="tiempo" value="30"> 30 segundos</label><br>
-        <label><input type="radio" name="tiempo" value="60" checked> 60 segundos</label><br>
-        <label><input type="radio" name="tiempo" value="120"> 120 segundos</label>
+        <label><input type="radio" name="tiempo" value="30"> 30s</label><br>
+        <label><input type="radio" name="tiempo" value="60" checked> 60s</label><br>
+        <label><input type="radio" name="tiempo" value="120"> 120s</label>
     </div>
 
     <div class="config-bloque">
@@ -37,30 +37,30 @@
     <div class="modal-contenido">
         <h2>📘 Reglamento</h2>
         <p>
-            🔹 Juego por equipos.<br>
-            🔹 Un jugador describe la palabra sin decir:<br>
-            <strong>la palabra principal ni ninguna palabra prohibida</strong>.
+            🔹 Juego por equipos<br>
+            🔹 No decir la palabra ni las prohibidas
         </p>
         <p>
-            🟢 Acierto: +1 punto<br>
-            🔴 Error o tiempo agotado: −1 punto
-        </p>
-        <p>
-            ⚡ En caso de empate → Muerte súbita.<br>
-            ⚡ Gana el equipo que saque ventaja tras ambos turnos.
+            🟢 Acierto: +1<br>
+            🔴 Error / tiempo: −1
         </p>
         <button id="btn-cerrar-reglamento">Cerrar</button>
     </div>
 </div>
 
-<section id="pantalla-turno">
+<section id="pantalla-turno" style="display:none;">
     <header>
         <h2 id="equipo-actual"></h2>
         <p id="ronda-actual"></p>
         <p id="tiempo-restante"></p>
     </header>
 
-    <div class="carta">
+    <div id="pre-turno" class="pre-turno">
+        <p class="mensaje-pasar">📱 Pasá el celular al jugador</p>
+        <button id="btn-play">▶️ MOSTRAR</button>
+    </div>
+
+    <div id="carta" class="carta oculto">
         <h1 id="palabra-principal"></h1>
         <ul id="palabras-prohibidas"></ul>
     </div>
@@ -68,24 +68,25 @@
     <div class="acciones">
         <button id="btn-acierto">✅ ACERTAMOS</button>
         <button id="btn-error">❌ FALLAMOS</button>
-        <button id="btn-cambiar">🔄 Cambiar palabra</button>
+        <button id="btn-cambiar">🔄 Cambiar</button>
     </div>
 
     <footer>
-        <p>Equipo A: <span id="puntos-a">0</span></p>
-        <p>Equipo B: <span id="puntos-b">0</span></p>
+        <p>A: <span id="puntos-a">0</span></p>
+        <p>B: <span id="puntos-b">0</span></p>
     </footer>
 </section>
 
-<section id="pantalla-final">
+<section id="pantalla-final" style="display:none;">
     <h1>🏁 Fin del Juego</h1>
     <p>Equipo A: <span id="final-a"></span></p>
     <p>Equipo B: <span id="final-b"></span></p>
     <h2 id="ganador"></h2>
-    <button id="btn-reiniciar">🔁 Jugar de nuevo</button>
+    <button id="btn-reiniciar">🔁 Jugar otra vez</button>
 </section>
 
 <script src="js/cartas.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
+

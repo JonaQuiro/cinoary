@@ -13,6 +13,10 @@ const puntosATxt = document.getElementById("puntos-a");
 const puntosBTxt = document.getElementById("puntos-b");
 
 const btnCambiar = document.getElementById("btn-cambiar");
+const btnPlay = document.getElementById("btn-play");
+
+const cartaDiv = document.getElementById("carta");
+const preTurnoDiv = document.getElementById("pre-turno");
 
 let tiempoTurno = 60;
 let rondasPorEquipo = 5;
@@ -25,34 +29,68 @@ let puntosA = 0;
 let puntosB = 0;
 
 let tiempo;
-let cartaActual;
-let cartasUsadas = [];
-
 let muerteSubita = false;
 let turnosMS = 0;
+
+let esperandoPlay = true;
 let cambioUsado = false;
 
-// CONFIG
+/* ====== MAZO ====== */
+let mazo = [];
+let indiceCarta = 0;
+
+/* ====== MEZCLAR ====== */
+function mezclarCartas() {
+    mazo = [...cartas];
+    for (let i = mazo.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [mazo[i], mazo[j]] = [mazo[j], mazo[i]];
+    }
+    indiceCarta = 0;
+}
+
+/* ====== COMENZAR ====== */
 document.getElementById("btn-comenzar").onclick = () => {
     tiempoTurno = +document.querySelector("input[name='tiempo']:checked").value;
     rondasPorEquipo = +document.querySelector("input[name='rondas']:checked").value;
+
+    mezclarCartas();
 
     pantallaConfig.style.display = "none";
     pantallaTurno.style.display = "block";
     iniciarTurno();
 };
 
-// REGLAMENTO
+/* ====== REGLAMENTO ====== */
 document.getElementById("btn-reglamento").onclick = () =>
     document.getElementById("modal-reglamento").style.display = "block";
 
 document.getElementById("btn-cerrar-reglamento").onclick = () =>
     document.getElementById("modal-reglamento").style.display = "none";
 
-// TURNO
+/* ====== TURNO ====== */
 function iniciarTurno() {
     actualizarUI();
     nuevaCarta();
+
+    esperandoPlay = true;
+    cartaDiv.classList.add("oculto");
+    preTurnoDiv.style.display = "block";
+
+    tiempoTxt.textContent = `⏱ ${tiempoTurno}s`;
+    btnCambiar.disabled = true;
+}
+
+/* ====== PLAY ====== */
+btnPlay.onclick = () => {
+    if (!esperandoPlay) return;
+
+    esperandoPlay = false;
+    preTurnoDiv.style.display = "none";
+    cartaDiv.classList.remove("oculto");
+
+    btnCambiar.disabled = muerteSubita;
+    cambioUsado = false;
 
     let t = tiempoTurno;
     tiempoTxt.textContent = `⏱ ${t}s`;
@@ -66,33 +104,38 @@ function iniciarTurno() {
             penalizar();
         }
     }, 1000);
+};
 
-    btnCambiar.disabled = muerteSubita;
-    cambioUsado = false;
-}
-
+/* ====== CARTA ====== */
 function nuevaCarta() {
-    let disponibles = cartas.filter(c => !cartasUsadas.includes(c));
-    if (disponibles.length === 0) cartasUsadas = [];
+    if (indiceCarta >= mazo.length) {
+        alert("🚫 Se terminaron las cartas");
+        finalizar();
+        return;
+    }
 
-    cartaActual = disponibles[Math.floor(Math.random() * disponibles.length)];
-    cartasUsadas.push(cartaActual);
+    const carta = mazo[indiceCarta];
+    indiceCarta++;
 
-    palabraTxt.textContent = cartaActual.palabra;
+    palabraTxt.textContent = carta.palabra;
     prohibidasUl.innerHTML = "";
-    cartaActual.prohibidas.forEach(p => {
-        let li = document.createElement("li");
+
+    carta.prohibidas.forEach(p => {
+        const li = document.createElement("li");
         li.textContent = p;
         prohibidasUl.appendChild(li);
     });
 }
 
+/* ====== UI ====== */
 function actualizarUI() {
     equipoTxt.textContent = `Turno Equipo ${equipoActual === 0 ? "A" : "B"}`;
-    rondaTxt.textContent = muerteSubita ? "⚡ TURNO DECISIVO" :
-        `Ronda ${equipoActual === 0 ? rondaA : rondaB} de ${rondasPorEquipo}`;
+    rondaTxt.textContent = muerteSubita
+        ? "⚡ MUERTE SÚBITA"
+        : `Ronda ${equipoActual === 0 ? rondaA : rondaB} de ${rondasPorEquipo}`;
 }
 
+/* ====== PUNTOS ====== */
 function sumar() {
     equipoActual === 0 ? puntosA++ : puntosB++;
     avanzar();
@@ -103,8 +146,10 @@ function penalizar() {
     avanzar();
 }
 
+/* ====== AVANZAR ====== */
 function avanzar() {
     clearInterval(tiempo);
+
     puntosATxt.textContent = puntosA;
     puntosBTxt.textContent = puntosB;
 
@@ -116,7 +161,6 @@ function avanzar() {
         if (rondaA > rondasPorEquipo && rondaB > rondasPorEquipo) {
             if (puntosA === puntosB) {
                 muerteSubita = true;
-                document.body.classList.add("muerte-subita");
                 turnosMS = 0;
             } else return finalizar();
         }
@@ -126,8 +170,8 @@ function avanzar() {
     iniciarTurno();
 }
 
+/* ====== FINAL ====== */
 function finalizar() {
-    document.body.classList.remove("muerte-subita");
     pantallaTurno.style.display = "none";
     pantallaFinal.style.display = "block";
 

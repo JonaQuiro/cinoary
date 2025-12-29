@@ -78,3 +78,34 @@ body.muerte-subita {
 .muerte-subita .carta {
     animation: pulso 0.6s infinite;
 }
+.oculto {
+    visibility: hidden;
+}
+
+.pre-turno {
+    text-align: center;
+    margin: 30px;
+}
+
+#btn-play {
+    font-size: 1.5em;
+    padding: 15px 30px;
+}
+.oculto {
+    display: none;
+}
+
+.pre-turno {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.mensaje-pasar {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#btn-play {
+    font-size: 1.6em;
+    padding: 15px 35px;
+}

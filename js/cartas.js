@@ -983,5 +983,239 @@ const cartas = [
 {
     "palabra": "INFLADOR",
     "prohibidas": ["colchoneta", "ruedas", "pileta", "boca", "pie"]
-}   
+},{
+    "palabra": "TERMOS",
+    "prohibidas": ["agua", "fría", "playa", "tapa", "vaso"]
+},
+// ANIMALES
+{
+    "palabra": "RINOCERONTE",
+    "prohibidas": ["cuerno", "grande", "África", "piel", "cargar"]
+},
+{
+    "palabra": "PULPO",
+    "prohibidas": ["tentáculos", "tinta", "mar", "ocho", "inteligente"]
+},
+{
+    "palabra": "ARDILLA",
+    "prohibidas": ["nuez", "cola", "árbol", "salta", "roja"]
+},
+{
+    "palabra": "BUHO",
+    "prohibidas": ["noche", "ojos", "girar", "cabeza", "sabio"]
+},
+{
+    "palabra": "MEDUSA",
+    "prohibidas": ["tentáculos", "mar", "picar", "transparente", "flotar"]
+},
+{
+    "palabra": "CIERVO",
+    "prohibidas": ["cornamenta", "bosque", "salta", "Bambi", "elegante"]
+},
+
+// PARTES DEL CUERPO
+{
+    "palabra": "FRENTE",
+    "prohibidas": ["cara", "arrugas", "sudor", "pelo", "beso"]
+},
+{
+    "palabra": "CLAVÍCULA",
+    "prohibidas": ["hueso", "hombro", "cuello", "delgada", "rota"]
+},
+{
+    "palabra": "AXILA",
+    "prohibidas": ["brazo", "sudor", "depilar", "olor", "cosquillas"]
+},
+{
+    "palabra": "INGLE",
+    "prohibidas": ["pierna", "arriba", "dolor", "tirón", "bañador"]
+},
+{
+    "palabra": "PÓMULO",
+    "prohibidas": ["cara", "alto", "maquillaje", "hueso", "sonrojo"]
+},
+{
+    "palabra": "CHARANGO",
+    "prohibidas": ["cuerdas", "pequeño", "Andes", "folklore", "tapa"]
+},
+{
+    "palabra": "XILOFÓN",
+    "prohibidas": ["teclas", "madera", "palillos", "niños", "sonido"]
+},
+{
+    "palabra": "TUBA",
+    "prohibidas": ["viento", "grande", "metal", "bajo", "banda"]
+},
+{
+    "palabra": "ÓRGANO",
+    "prohibidas": ["teclas", "iglesia", "tubos", "grande", "pedales"]
+},
+{
+    "palabra": "SUBMARINO",
+    "prohibidas": ["agua", "bajo", "periscopio", "torpedo", "militar"]
+},
+{
+    "palabra": "CUATRICICLO",
+    "prohibidas": ["cuatro ruedas", "arena", "playa", "casco", "motor"]
+},
+{
+    "palabra": "GLOBO AEROSTÁTICO",
+    "prohibidas": ["aire", "caliente", "cesta", "subir", "flotar"]
+},
+{
+    "palabra": "TELEFÉRICO",
+    "prohibidas": ["cable", "montaña", "cabina", "esquí", "vista"]
+},
+{
+    "palabra": "REMIS",
+    "prohibidas": ["auto", "llamar", "chofer", "viaje", "agencia"]
+},
+{
+    "palabra": "PATINETA ELÉCTRICA",
+    "prohibidas": ["pie", "batería", "ruedas", "ciudad", "equilibrio"]
+},
+{
+    "palabra": "PROGRAMA",
+    "prohibidas": ["materia", "contenidos", "unidad", "profesor", "pdf"]
+},
+{
+    "palabra": "INSCRIPCIÓN",
+    "prohibidas": ["materia", "SIU", "cupo", "fecha", "online"]
+},
+{
+    "palabra": "COMISIÓN",
+    "prohibidas": ["horario", "profesor", "curso", "elegir", "turno"]
+},
+{
+    "palabra": "MARCADOR",
+    "prohibidas": ["resaltar", "amarillo", "apuntes", "fluo", "tinta"]
+},
+{
+    "palabra": "SANDALIAS",
+    "prohibidas": ["pies", "verano", "dedos", "playa", "chanclas"]
+},
+{
+    "palabra": "SNORKEL",
+    "prohibidas": ["tubo", "gafas", "mar", "peces", "respirar"]
+},
+{
+    "palabra": "HELADERITA",
+    "prohibidas": ["pequeña", "hielo", "birra", "playa", "portátil"]
+},
+{
+    "palabra": "RASTRILLO",
+    "prohibidas": ["arena", "juguete", "cesped", "juntar", "plástico"]
+},
+{
+    "palabra": "BOLSA NEVERA",
+    "prohibidas": ["comida", "fría", "cierre", "playa", "portátil"]
+},
+{
+    "palabra": "FLOTADOR",
+    "prohibidas": ["pileta", "inflar", "niños", "forma", "agua"]
+},
+{
+    "palabra": "NIKE",
+    "prohibidas": ["zapatillas", "tilín", "Just Do It", "Jordan", "swoosh"]
+},
+{
+    "palabra": "ADIDAS",
+    "prohibidas": ["tres rayas", "zapatillas", "Stan Smith", "Originals", "deporte"]
+},
+{
+    "palabra": "COCA COLA",
+    "prohibidas": ["gaseosa", "roja", "botella", "Navidad", "Pepsi"]
+},
+{
+    "palabra": "MCDONALDS",
+    "prohibidas": ["hamburguesa", "papas fritas", "arco dorado", "Big Mac", "Ronald"]
+},
+{
+    "palabra": "STARBUCKS",
+    "prohibidas": ["café", "sirena", "Frappuccino", "vaso verde", "latte"]
+},
+{
+    "palabra": "APPLE",
+    "prohibidas": ["iPhone", "manzana", "Mac", "Steve Jobs", "AirPods"]
+},
+{
+    "palabra": "NETFLIX",
+    "prohibidas": ["series", "películas", "streaming", "rojo", "maratón"]
+},
+{
+    "palabra": "INSTAGRAM",
+    "prohibidas": ["fotos", "historias", "Meta", "like", "reel"]
+},
+{
+    "palabra": "SPOTIFY",
+    "prohibidas": ["música", "playlist", "verde", "podcast", "premium"]
+},
+{
+    "palabra": "YOUTUBE",
+    "prohibidas": ["videos", "rojo", "play", "suscribir", "creador"]
+},
+{
+    "palabra": "GOOGLE",
+    "prohibidas": ["buscar", "logo colores", "Chrome", "Maps", "Android"]
+},
+{
+    "palabra": "AMAZON",
+    "prohibidas": ["comprar", "online", "Prime", "flecha", "paquete"]
+},
+{
+    "palabra": "DISNEY",
+    "prohibidas": ["Mickey", "castillo", "películas", "parque", "princesas"]
+},
+{
+    "palabra": "BMW",
+    "prohibidas": ["auto", "riñones", "alemán", "serie 3", "lujo"]
+},
+{
+    "palabra": "FERRARI",
+    "prohibidas": ["auto", "rojo", "caballito", "Fórmula 1", "rápido"]
+},
+{
+    "palabra": "RED BULL",
+    "prohibidas": ["energizante", "alas", "toros", "extremo", "Fórmula 1"]
+},
+{
+    "palabra": "GUCCI",
+    "prohibidas": ["lujo", "moda", "doble G", "bolso", "italiana"]
+},
+{
+    "palabra": "SUPREME",
+    "prohibidas": ["rojo", "box logo", "streetwear", "hype", "colab"]
+},
+{
+    "palabra": "VANS",
+    "prohibidas": ["zapatillas", "cuadros", "skate", "Old Skool", "off the wall"]
+},
+{
+    "palabra": "PEPSI",
+    "prohibidas": ["gaseosa", "azul", "Coca", "lata", "challenge"]
+},
+{
+    "palabra": "BURGER KING",
+    "prohibidas": ["hamburguesa", "Whopper", "corona", "llama", "rival"]
+},
+{
+    "palabra": "KFC",
+    "prohibidas": ["pollo", "frito", "coronel", "balde", "secreto"]
+},
+{
+    "palabra": "LEGO",
+    "prohibidas": ["bloques", "armar", "piezas", "niños", "Star Wars"]
+},
+{
+    "palabra": "SONY",
+    "prohibidas": ["PlayStation", "japonesa", "TV", "cámara", "Walkman"]
+},
+{
+    "palabra": "SAMSUNG",
+    "prohibidas": ["celular", "Galaxy", "coreana", "TV", "Android"]
+},
+{
+    "palabra": "VOLKSWAGEN",
+    "prohibidas": ["auto", "alemán", "Escarabajo", "Golf", "logo VW"]
+}
 ];
